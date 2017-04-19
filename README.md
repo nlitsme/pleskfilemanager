@@ -4,6 +4,11 @@ Tool for interacting with the plesk web interface from the commandline.
 The commands attempt to mimic the standard unix commandline tools.
 
 
+## requirements
+
+ * Python 3.6
+ * aiohttp 2.0
+
 
 ## Example usage:
 
