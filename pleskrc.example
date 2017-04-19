@@ -1,0 +1,12 @@
+[test]
+baseurl=https://webpro-lin.demo.plesk.com:8443/
+username=admin
+password=panel
+
+[plesk12]
+baseurl=https://plesk12-webadmin.demo.parallels.com:8443/
+ignoresslerrors=true
+username=admin
+password=panel
+
+
