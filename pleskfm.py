@@ -285,6 +285,9 @@ async def listfiles(host, dirname, args):
 
     resp.close()
     if info.get('status') == 'error':
+        if args.ignoreerror:
+            print("ERROR", dirname, info.get('message'))
+            return
         raise Exception(info.get('message'))
 
     print("%s:" % dirname)
@@ -496,6 +499,7 @@ def makeparser():
 
     ls = sub.add_parser('ls', help='list files')
     ls.add_argument('--recurse', '-r', action='store_true', help='recursively list directories')
+    ls.add_argument('--ignoreerror', '-c', action='store_true', help='continue after error')
     ls.add_argument('dirname', type=str, help='which directory to list')
 
     cat = sub.add_parser('cat', help='print remote file contents to stdout')
