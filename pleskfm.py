@@ -401,6 +401,7 @@ async def createdir(host, dirname):
 
 
 async def delfiles(host, files):
+    # todo: first check if we are not accidentally removing directories.
     resp = await host.delfiles(files)
     print(await resp.text())
     resp.close()
